@@ -1,58 +1,37 @@
 <?php
-//test 
+$symbols = array("ADBE", "APPL", "ATVI", "AMZN", "ADSK", "FB", "GOOGL", "MSFT");
+$names = ["Adobe Systems Inc.", "Apple Inc.", "Activision Blizzard", "Amazon.com Inc.", "Autodesk Inc.", "Facebook Inc.", "Alphabet Inc.", "Microsoft Corporation"];
+$prices = [240.36, 218.32, 75.42, 1760.19, 135.25, 154.62, 1111.39, 108.82];
+
+function outputStocks($symbols, $names, $prices)
+{
+    for ($i = 0; $i < count($symbols); $i++) {
+        echo "<div class='box'>";
+        echo "<h2>$symbols[$i]</h2>";
+        echo "<h3>$names[$i]</h3>";
+        echo "<p>$prices[$i]</p>";
+        echo "</div>";
+    }
+}
 ?>
+
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8"/>  
-    <title>Lab 12b</title>   
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,800" rel="stylesheet">    
+    <meta charset="utf-8" />
+    <title>Lab 12b</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,800" rel="stylesheet">
     <link rel="stylesheet" href="css/lab12b-ex01.css">
 </head>
+
 <body>
-<main class="container">
-    <div class="grid-container">
-        <div class='box'>
-            <h2>ADBE</h2>
-            <h3>Adobe Systems Inc.</h3>
-            <p>$240.36</p>
+    <main class="container">
+        <div class="grid-container">
+            <?php outputStocks($symbols, $names, $prices); ?>
         </div>
-        <div class='box'>
-            <h2>APPL</h2>
-            <h3>Apple Inc.</h3>
-            <p>$218.32</p>
         </div>
-        <div class='box'>
-            <h2>ATVI</h2>
-            <h3>Activision Blizzard</h3>
-            <p>$75.42</p>
-        </div>
-        <div class='box'>
-            <h2>AMZN</h2>
-            <h3>Amazon.com Inc.</h3>
-            <p>$1760.19</p>
-        </div>
-        <div class='box'>
-            <h2>ADSK</h2>
-            <h3>Autodesk Inc.</h3>
-            <p>$135.25</p>
-        </div>    
-        <div class='box'>
-            <h2>FB</h2>
-            <h3>Facebook Inc.</h3>
-            <p>$154.62</p>
-        </div>   
-        <div class='box'>
-            <h2>GOOGL</h2>
-            <h3>Alphabet Inc.</h3>
-            <p>$1111.39</p>
-        </div>     
-        <div class='box'>
-            <h2>MSFT</h2>
-            <h3>Microsoft Corporation</h3>
-            <p>$108.82</p>
-        </div>           
-    </div>
-</main>   
+    </main>
 </body>
+
 </html>
