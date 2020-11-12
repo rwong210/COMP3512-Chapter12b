@@ -35,7 +35,7 @@ $isbn = $defaultISBN;
             <?php
               foreach ($books as $key => $value) {
                   echo '<li>'; 
-                  echo '<a href="lab12b-ex08.php">';
+                  echo '<a href="lab12b-ex08.php?isbn= ' . $key . '">';
                   echo $value['title'];
                   echo '</a>';
                   echo '</li>';      
