@@ -1,7 +1,15 @@
 <?php
-
-
-
+    function displayPostStatus() {
+        if (isset($_POST['something']) && $_POST['something']!="") {
+            echo "Your content was: " . $_POST["something"];
+            echo "<pre>";
+            print_r($_POST);
+            echo "</pre>";
+        }
+        else {
+            echo "No Post detected";
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,7 +29,7 @@
              <input type='submit' value='Post' />            
         </form>
         <div id="messages">
-            
+            <?php displayPostStatus();?>
         </div>
     </section>
 
