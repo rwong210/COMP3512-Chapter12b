@@ -1,9 +1,16 @@
 <?php 
 
 include 'includes/book-data.inc.php'; 
+if (isset($_GET['isbn'])){
+  $isbn = $_GET['isbn'];
 
-
-$isbn = $defaultISBN;
+  if (! array_key_exists($isbn, $books)) {
+    $isbn = $defaultISBN;
+  }
+}
+else {
+  $isbn = $defaultISBN;
+}
 
 
 ?>
@@ -35,7 +42,7 @@ $isbn = $defaultISBN;
             <?php
               foreach ($books as $key => $value) {
                   echo '<li>'; 
-                  echo '<a href="lab12b-ex08.php?isbn= ' . $key . '">';
+                  echo '<a href="lab12b-ex08.php?isbn=' . $key . '">';
                   echo $value['title'];
                   echo '</a>';
                   echo '</li>';      
