@@ -10,7 +10,8 @@
     <h1>Fine Art Meme Maker</h1> 
     <section class="grid-container">
         <?php
-            // eventually add code to loop throu images
+            // eventually add code to loop through images
+            
         ?>
     </section>     
     <form action="lab12b-test02.php" method="get">
