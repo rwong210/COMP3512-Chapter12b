@@ -14,7 +14,7 @@
         <?php
 
         for ($i = 0; $i < 10; $i++) {
-            // eventually add code to loop through images
+            // loop through and return images generated on lab12b-test.php
             $_GET['width'] = 100;
             echo '<img src="lab12b-test02.php?file=' . $i . '&width=' . $_GET['width'] . '">';
         }

@@ -2,14 +2,23 @@
 
 // tell the browser that this is returning an image
 header('Content-Type: image/jpeg');
+
+// generate the scaled images if the width querystring is set
 if (isset($_GET['width'])) {
     $width = $_GET['width'];
+
+    // create image
     $imgname2 = "images/art/" . $_GET['file'] . ".jpg";
     $newimg = imagecreatefromjpeg($imgname2);
+
+    // scale image
     $newimg = imagescale($newimg, $width);
+
+    // return image
     imagejpeg($newimg);
 }
-// create image
+
+// create main image
 $imgname = "images/art/" . $_GET['file'] . ".jpg";
 $img = imagecreatefromjpeg($imgname);
 
